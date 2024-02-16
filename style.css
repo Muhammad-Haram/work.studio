@@ -1,0 +1,324 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: fbl;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+@font-face {
+    font-family: fbl;
+    src: url("./assets/font/Freight_Big_Pro/Freight\ Big\ Pro\ Light.otf");
+}
+
+#loader {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    z-index: 99;
+}
+
+#loader .yellow1 {
+    width: 100%;
+    height: 100%;
+    background-color: #f5e41b;
+    position: absolute;
+    z-index: 9;
+}
+
+#loader .yellow2 {
+    width: 100%;
+    height: 100%;
+    background-color: #f5e41b;
+    position: absolute;
+    z-index: 7;
+}
+
+#loader video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    z-index: 6;
+}
+
+#nav {
+    position: absolute;
+    width: 100%;
+    padding: 30px 50px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav ul li {
+    list-style: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    transition: all ease-in-out 0.3s;
+}
+
+#nav ul li:hover {
+    border-bottom: 1px solid #000;
+}
+
+.page1 h1,
+#loader h1 {
+    font-size: 6.5vw;
+    font-weight: 100;
+    line-height: 5vw;
+    font-family: fbl;
+    letter-spacing: -2px;
+}
+
+#loader h1 {
+    position: relative;
+    z-index: 8;
+}
+
+#main {
+    background-color: #000;
+}
+
+.page1 {
+    width: 100%;
+    height: 100vh;
+    background-color: #f5e41b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.page2 {
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.elem {
+    width: 100%;
+    position: relative;
+}
+
+.elem .blur {
+    width: 30%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    z-index: 8;
+    background: linear-gradient(to right, #f5e31bef, #f5e41b, #f5e31bea);
+    box-shadow: 10px 0px 20px 20px #f5e41b, -10px 0px 20px 80px #f5e41b;
+}
+
+.elem h2 {
+    font-size: 96px;
+    font-weight: 300;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 9;
+    line-height: 5vw;
+    transition: all 0.6s;
+}
+
+.elem .moving {
+    background-color: #f5e41b;
+    width: 100%;
+    white-space: nowrap;
+    padding: 8px 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%) scaleY(0);
+    cursor: pointer;
+    transition: all ease 0.5s;
+    overflow: hidden;
+}
+
+.elem .moving .move-in {
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: move;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.elem .moving .move-in h5 {
+    color: #000;
+    display: inline-block;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin-right: 35px;
+    transition: all ease 0.3s;
+    transition-delay: 0.2s;
+    opacity: 0;
+}
+
+.elem:hover .moving {
+    transform: translate(0, -50%) scaleY(1);
+}
+
+.elem:hover .moving h5 {
+    opacity: 1;
+}
+
+.elem:hover h2 {
+    color: #000;
+    cursor: pointer;
+}
+
+
+@keyframes move {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+
+}
+
+
+.page3 {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+.image-container {
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-div {
+    background-color: red;
+    width: 30vw;
+    height: 40vw;
+    position: relative;
+    overflow: hidden;
+    margin: 12px;
+}
+
+.image-div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all ease 0.5s;
+}
+
+.overlay {
+    background-color: #000000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all ease 0.5s;
+    transition-delay: 0.1s;
+    z-index: 9;
+    padding: 10px;
+}
+
+.overlay p {
+    font-size: 3.5vw;
+    line-height: 4vw;
+    text-align: center;
+    color: white;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+.overlay:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.image-div:hover img {
+    scale: 1.1;
+}
+
+#footer {
+    width: 100%;
+    height: 40vh;
+}
+
+#footer h3 {
+    background-color: white;
+    width: 100%;
+    height: 40%;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+#footer .foot {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    padding: 50px;
+}
+
+#footer .foot p {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    border-bottom: 1px solid transparent;
+    transition: all ease 0.5s;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#footer .foot p:hover {
+    border-bottom: 1px solid #fff;
+    cursor: pointer;
+}
